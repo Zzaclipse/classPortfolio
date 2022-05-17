@@ -23,6 +23,7 @@ header{
     top: 0px;
     display: flex;
     z-index: 999;
+    width: 100%;
 }
 
 /* makes my name big letters */
@@ -77,20 +78,41 @@ nav a:active{
 /* creates side box with the titles of each section on the left */
 h2{
     margin: 0px 20px 0px 20px;
-    padding: 255px 20px;
-    font-size: 48px;
+    padding: 280px 20px;
+    font-size: 40px;
     background-color: black;
     color: var(--mainColor);
     flex: 0 0 auto;
     text-align: center;
     border-radius: var(--borrad);
-    width: 13%;
+    width: 16%;
+}
+
+/* changes padding for work h2 */
+.work{
+    padding: 150px 20px;
+}
+
+/* changes padding for contact me h2 */
+.cm{
+    padding: 160px 20px 0px 20px;
 }
 
 /* creates the box in the middle of contact me and about me sections */
 .midSection{
     margin: 0px 20px 0px 20px;
-    padding: 170px 0;
+    padding: 150px 0;
+    background-color: var(--mainColor);
+    flex: 1 1 auto;
+    border-radius: var(--borrad);
+    text-align: center;
+
+}
+
+/* makes contact section smaller */
+.midSectionContact{
+    margin: 0px 20px 0px 20px;
+    padding: 80px 0;
     background-color: var(--mainColor);
     flex: 1 1 auto;
     border-radius: var(--borrad);
@@ -100,7 +122,8 @@ h2{
 
 /* formats my headshot picture */
 .headshot{
-    margin: 14px 20px 14px 20px;
+    border: 14px 20px 14px 20px;
+    margin-left: 20px;
     width: 400px; 
     height: 600px;
     border-radius: var(--borrad);
@@ -111,11 +134,17 @@ h2{
     box-shadow: 0px 0px 0px var(--mainColor);
 }
 
+/* makes all imgs have curved edges */
+img{
+    border-radius: var(--borrad);
+    height: 175px;
+}
+
 /* formats horiseon homework picture */
 .codeRefac{
     margin: 14px 20px 14px 20px;
-    height: 500px;
-    width: 700px;
+    height: unset;
+    width: 450px;
     border-radius: var(--borrad);
 }
 
@@ -131,7 +160,7 @@ img:hover{
 
 /* sets all p tag font size */
 p{
-    font-size: 35px;
+    font-size: 30px;
 }
 
 /* makes all figure tags work with flexboxes */
@@ -141,8 +170,7 @@ figure{
 
 /* centers my headshot */
 .f1{
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 /* creates a container with position relative for text on the picture */
@@ -154,23 +182,24 @@ figure{
 /* sets up text on top of the img with position absolute */
 figure .txtOnImg{
     position: absolute;
-    bottom: 35px;
-    left: 210px;
+    bottom: 30px;
+    left: 160px;
     background-color: var(--mainColor);
     text-align: center;
     padding: 15px;
     text-decoration: none;
     border-radius: var(--borrad);
     color: black;
+    font-size: 20px;
 
 }
 
 /* sets up text on top of the smaller 3 imgs with position absolute */
 figure .txtOnImgSmall{
-    font-size: 20px;
+    font-size: 12px;
     position: absolute;
-    bottom: 30px;
-    left: 90px;
+    bottom: 8px;
+    left: 40px;
     background-color: var(--mainColor);
     text-align: center;
     padding: 10px;
@@ -179,10 +208,7 @@ figure .txtOnImgSmall{
     color: black;
 }
 
-/* makes all imgs have curved edges */
-img{
-    border-radius: var(--borrad);
-}
+
 
 
 
@@ -220,6 +246,12 @@ img{
     /* makes the top of the box not have a curve so it fits perfectly with title box */
     .midSection{
         border-radius: 0px 0px var(--borrad) var(--borrad);
+        padding: 100px 10px;
+    }
+    /* makes the top of the box not have a curve so it fits perfectly with title box */
+    .midSectionContact{
+        border-radius: 0px 0px var(--borrad) var(--borrad);
+        padding: 80px 10px;
     }
     /* makes the bottom of the box not have a curve so it fits perfectly with middle box */
     h2{
@@ -231,8 +263,14 @@ img{
     /* recurves the work box edges */
     .work{
         border-radius: var(--borrad);
+        padding: 20px 20px;
 
     }
+    /* padding change for contact me section */
+    .cm{
+        padding: 20px 20px;
+    }
+
     /* centers headshot */
     .f1{
         margin-left: auto;
