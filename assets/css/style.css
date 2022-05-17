@@ -1,6 +1,7 @@
 :root{
-    --bkgrnd: #666666;
-    --purp: #9900cc;
+    --bkgrnd: #8d8a8a;
+    --mainColor: #b3ffff;
+    --borrad: 7px;
 }
 
 * {
@@ -14,18 +15,18 @@ body{
 
 header{
     padding: 20px;
-    background-color: var(--purp);
+    background-color: var(--mainColor);
     display: flex;
     justify-content: right;
     position: sticky;
     top: 0px;
-    
+    z-index: 999;
 }
 
 header h1{
     justify-content: left;
     display: inline-block;
-    font-size: 48px;
+    font-size: 60px;
     flex: 1 1 auto;
     
 }
@@ -48,20 +49,92 @@ nav a{
 
 nav a:hover{
     padding-top: 35px;
-    padding-bottom: 28px;
+    padding-bottom: 40px;
     background-color: black;
-    color: var(--purp);
+    color: var(--mainColor);
 }
 
 nav a:active{
     /* top right bot left*/
-    padding: 29px 14px 22px 14px;
-    border: 6px var(--purp);
+    padding: 29px 14px 34px 14px;
+    border: 6px var(--mainColor);
     border-style: double;
 }
  
+.containerSection{
+    margin: 20px;
+    padding: 20px;
+    display: flex; 
+}
 
-.leftBox {
+
+h2{
+    margin: 0px 20px 0px 20px;
+    padding: 255px 20px;
+    font-size: 48px;
+    background-color: black;
+    color: var(--mainColor);
+    flex: 0 0 auto;
+    text-align: center;
+    border-radius: var(--borrad);
+    width: 13%;
+}
+
+
+.midSection{
+    margin: 0px 20px 0px 20px;
+    padding: 150px 0;
+    background-color: var(--mainColor);
+    flex: 1 1 auto;
+    border-radius: var(--borrad);
+    text-align: center;
+
+}
+
+.headshot{
+    margin: 14px 20px 14px 20px;
+    width: 400px; 
+    height: 600px;
+    border-radius: var(--borrad);
+}
+
+.codeRefac{
+    margin: 14px 20px 14px 20px;
+
+    height: 600px;
+    width: 700px;
+    border-radius: var(--borrad);
+}
+
+p{
+    font-size: 35px;
+}
+figure{
+    flex: 1 1 auto;
+}
+
+.imgContain{
+    position: relative;
+    width: 0px;
+}
+div .txtOnImg{
+    position: absolute;
+    bottom: 40px;
+    left: 500px;
+    background-color: var(--mainColor);
+    text-align: center;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+
+
+/* .leftBox {
     margin: 20px;
     padding: 20px;
     clear: both;
@@ -69,10 +142,10 @@ nav a:active{
     height: 20vh;
     display: inline-block;
     text-align: right;
-    background-color: var(--purp);
-}
+    background-color: var(--mainColor);
+} */
 
-aside {
+/* aside {
     margin: 20px;
     padding: 20px;
     clear: both;
@@ -80,14 +153,14 @@ aside {
     width: 70%;
     height: 20vh;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: var(--purp);
-}
+    background-color: var(--mainColor);
+} */
 
-img{
-    background-size: contain;
-}
 
-@media screen and (max-width: 800px) {
+
+
+
+@media screen and (max-width: 1000px) {
     nav a {
       flex-direction: column;
       padding-top: 0px;
@@ -97,18 +170,25 @@ img{
     nav a:hover{
         padding: 3px 17px 3px 17px;
         background-color: black;
-        color: var(--purp);
+        color: var(--mainColor);
     }
     nav a:active{
         padding: 0px 14px 0px 14px;
-        border: 3px var(--purp);
+        border: 3px var(--mainColor);
         border-style: double;
     }
+    .containerSection{
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    h2{
+        width: unset;
+        text-align: center;
+        padding: 20px 20px;
+    }
+    .headshot{
+        justify-content: center;
+    }
 
-    .leftBox{
-        margin: 10px;
-    }
-    aside{
-        margin: 10px;
-    }
+    
 } 
