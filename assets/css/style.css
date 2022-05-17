@@ -1,52 +1,57 @@
+/* sets colors and border radius variables for the whole page */
 :root{
     --bkgrnd: #8d8a8a;
-    --mainColor: #b3ffff;
+    --mainColor: #66c2ff;
     --borrad: 7px;
 }
 
+/* universal font */
 * {
     font-family: "Lucida Console", monospace;
 }
 
-
+/* sets backgorund color */
 body{
     background-color: var(--bkgrnd);
 }
 
+/* creates header box that is sticky and a flex container */
 header{
     padding: 20px;
     background-color: var(--mainColor);
-    display: flex;
-    justify-content: right;
     position: sticky;
     top: 0px;
+    display: flex;
     z-index: 999;
 }
 
+/* makes my name big letters */
 header h1{
-    justify-content: left;
-    display: inline-block;
     font-size: 60px;
     flex: 1 1 auto;
-    
 }
 
+/* adjusts all links to be more centered vertically in header */
 nav{
     padding-top: 15px;
 }
 
-nav a{
+/* removes underline and color from links */
+a{
     text-decoration: none;
+    color: black;
+}
+
+/* adjust spacing between links*/
+nav a{
     padding-right: 20px;
     padding-left: 20px;
     font-size: 25px;
-    color: black;
     flex: 1 1 auto;
     width: 25%;
-    
-    
 }
 
+/* creates box around link when hovered */
 nav a:hover{
     padding-top: 35px;
     padding-bottom: 40px;
@@ -54,6 +59,7 @@ nav a:hover{
     color: var(--mainColor);
 }
 
+/* creates border when link is clicked */
 nav a:active{
     /* top right bot left*/
     padding: 29px 14px 34px 14px;
@@ -61,13 +67,14 @@ nav a:active{
     border-style: double;
 }
  
+/* creates flex box class for my 3 sections */
 .containerSection{
     margin: 20px;
     padding: 20px;
     display: flex; 
 }
 
-
+/* creates side box with the titles of each section on the left */
 h2{
     margin: 0px 20px 0px 20px;
     padding: 255px 20px;
@@ -80,10 +87,10 @@ h2{
     width: 13%;
 }
 
-
+/* creates the box in the middle of contact me and about me sections */
 .midSection{
     margin: 0px 20px 0px 20px;
-    padding: 150px 0;
+    padding: 170px 0;
     background-color: var(--mainColor);
     flex: 1 1 auto;
     border-radius: var(--borrad);
@@ -91,6 +98,7 @@ h2{
 
 }
 
+/* formats my headshot picture */
 .headshot{
     margin: 14px 20px 14px 20px;
     width: 400px; 
@@ -98,97 +106,137 @@ h2{
     border-radius: var(--borrad);
 }
 
+/* turns off img hover on my headshot*/
+.headshot:hover{
+    box-shadow: 0px 0px 0px var(--mainColor);
+}
+
+/* formats horiseon homework picture */
 .codeRefac{
     margin: 14px 20px 14px 20px;
-
-    height: 600px;
+    height: 500px;
     width: 700px;
     border-radius: var(--borrad);
 }
 
+/* makes imgs glow blue */
+img:hover{
+    box-shadow: 0px 0px 30px var(--mainColor);
+}
+
+/* makes my github link glow black when hovered */
+.github:hover{    
+    text-shadow: 0px 0px 3px black;
+}
+
+/* sets all p tag font size */
 p{
     font-size: 35px;
 }
+
+/* makes all figure tags work with flexboxes */
 figure{
     flex: 1 1 auto;
 }
 
+/* centers my headshot */
+.f1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* creates a container with position relative for text on the picture */
 .imgContain{
     position: relative;
-    width: 0px;
+    margin: auto;
 }
-div .txtOnImg{
+
+/* sets up text on top of the img with position absolute */
+figure .txtOnImg{
     position: absolute;
-    bottom: 40px;
-    left: 500px;
+    bottom: 35px;
+    left: 210px;
     background-color: var(--mainColor);
     text-align: center;
     padding: 15px;
+    text-decoration: none;
+    border-radius: var(--borrad);
+    color: black;
+
+}
+
+/* sets up text on top of the smaller 3 imgs with position absolute */
+figure .txtOnImgSmall{
+    font-size: 20px;
+    position: absolute;
+    bottom: 30px;
+    left: 90px;
+    background-color: var(--mainColor);
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: var(--borrad);
+    color: black;
+}
+
+/* makes all imgs have curved edges */
+img{
+    border-radius: var(--borrad);
 }
 
 
 
-
-
-
-
-
-
-/* .leftBox {
-    margin: 20px;
-    padding: 20px;
-    clear: both;
-    width: 20%;
-    height: 20vh;
-    display: inline-block;
-    text-align: right;
-    background-color: var(--mainColor);
-} */
-
-/* aside {
-    margin: 20px;
-    padding: 20px;
-    clear: both;
-    float: right;
-    width: 70%;
-    height: 20vh;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: var(--mainColor);
-} */
-
-
-
-
-
+/* changes format of the page under 1000px */
 @media screen and (max-width: 1000px) {
-    nav a {
-      flex-direction: column;
-      padding-top: 0px;
-      padding-bottom: 0px;
-      
+    /* makes header stack vertically */
+    header{
+        flex-direction: column;
     }
+    /* centers nav links */
+    nav{
+        margin: auto;
+    }
+    /* centers my name */
+    header h1{
+        margin: auto;
+    }
+    /* fixes the hover box on the links */
     nav a:hover{
         padding: 3px 17px 3px 17px;
         background-color: black;
         color: var(--mainColor);
     }
+    /* fixes the clicked boxes on the links */
     nav a:active{
         padding: 0px 14px 0px 14px;
         border: 3px var(--mainColor);
         border-style: double;
     }
+    /* makes all content under the header stack vertically */
     .containerSection{
         flex-wrap: wrap;
         flex-direction: column;
     }
+    /* makes the top of the box not have a curve so it fits perfectly with title box */
+    .midSection{
+        border-radius: 0px 0px var(--borrad) var(--borrad);
+    }
+    /* makes the bottom of the box not have a curve so it fits perfectly with middle box */
     h2{
         width: unset;
         text-align: center;
         padding: 20px 20px;
+        border-radius: var(--borrad) var(--borrad) 0px 0px;
     }
-    .headshot{
-        justify-content: center;
-    }
+    /* recurves the work box edges */
+    .work{
+        border-radius: var(--borrad);
 
+    }
+    /* centers headshot */
+    .f1{
+        margin-left: auto;
+        margin-right: auto;
+    }
     
 } 
